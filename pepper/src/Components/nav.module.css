@@ -1,0 +1,76 @@
+.container{
+    margin: 0px auto;
+    /* padding: 0.4rem; */
+    border: 1px solid rgb(222, 222, 222);
+}
+.navbar{
+    width: 90%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+.logo{
+    
+    display: block;
+    height: 38px;
+    width: 179px;
+    background: url('https://ii1.pepperfry.com/images/svg/pf-logo-21.svg') center center / contain no-repeat;
+}
+.search{
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 95% 5%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px whitesmoke;
+}
+.search input[type='text']{
+    background-color: whitesmoke;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid whitesmoke;
+    outline: none;
+}
+.search input[type='submit']{
+    color: transparent;
+    outline: none;
+    border: 1px solid whitesmoke;
+    background: url('https://ii1.pepperfry.com/images/svg/icon-search-21.svg') center center / 20px no-repeat;
+}
+.user{
+   
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    gap: 1rem;
+}
+.user img{
+    width: 35px;
+}
+.links{
+    width: 90%;
+    margin: 0 auto;
+}
+.links ul{
+    padding: 0;
+    display: flex;
+    margin-left: -1rem;
+    justify-content: start;
+
+    
+}
+.links li{
+    padding:0  0.8rem;
+    list-style: none;
+}
+.links a{
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+.links a:hover{
+    
+    border-bottom: 4px solid orangered;
+    padding-bottom: 0.8rem;
+}
