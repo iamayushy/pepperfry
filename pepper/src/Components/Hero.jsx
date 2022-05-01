@@ -1,10 +1,14 @@
 import { Carousel } from 'antd'
 import 'antd/dist/antd.css'
 import hero from '../Components/hero.module.css'
+import { Banner } from './Banner'
+import { Decor } from './Decor'
+import { Item } from './Item'
+import { Mover } from './Mover'
 const Hero = () => {
 
     return (
-        <div>
+        <div className={hero.btm}>
             <section className={hero.box}>
                 {/* <section className={hero.bgcontainer}> */}
                 <Carousel autoplay className={hero.holder}>
@@ -84,7 +88,12 @@ const Hero = () => {
 
 
                 </section>
+                <Mover/>
+                <Decor/>
+                <Item/>
+                
             </section>
+            <Banner/>
         </div>
     )
 }
