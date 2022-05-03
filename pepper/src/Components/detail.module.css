@@ -1,0 +1,136 @@
+.cont{
+    box-shadow: 8px 8px 8px whitesmoke;
+    margin: 2rem auto;
+}
+.main{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    /* border: 1px solid black; */
+}
+.main > *{
+    flex:  1 1 50%;
+}
+.big{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.big img{
+    align-items: center;
+    width: 100%;
+    /* border: 1px solid black; */
+
+}
+.fea{
+    display: flex;
+    /* border: 1px solid black; */
+    width: 70%;
+    flex-wrap: wrap ;
+    /* margin: 1rem; */
+}
+.fea > *{
+    flex: 1 1 50%;
+}
+.ts{
+    margin-top: 2rem;
+    display: flex;
+    gap: 4rem;
+}
+.ts h4{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.fea p{
+    line-height: 1;
+}
+.dm{
+    color: black;
+    font-weight: 600;
+}
+button{
+    height: 40px;
+
+}
+.pname h3{
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+.pname p{
+    font-size: 1rem;
+    color: orangered;
+    margin-top: -12px;
+}
+.pincode{
+    margin: 2rem 0;
+}
+.des{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.pincode p{
+    position: relative;
+    left: 5.7rem;
+    top: 0.5rem;
+}
+.qs{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+select{
+    width: 5rem;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline:  black;
+    border: 1.5px solid black;
+}
+.qs input{
+    cursor: pointer;
+    width: 15rem;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+.qs input[type='submit']{
+    background-color: orangered;
+    color: white;
+    border: 1px solid orangered;
+}
+.pincode input[type='text']{
+    cursor: pointer;
+    width: 20rem;
+    height: 30px;
+    font-size: 0.9rem;
+    padding: 1.2rem;
+    border: 1px solid white;
+    background-color: whitesmoke;
+}
+.pincode input[type='text']:focus{
+    outline: 1px solid orangered;
+}
+.mover{
+    background-color: rgb(189, 189, 189);
+    border: 1px solid rgb(255, 255, 255);
+    outline: 1px solid whitesmoke;
+    width: 50px;
+}
+.smsl{
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+}
+.smsl img{
+    margin: 0.3rem;
+    width: 20%;
+}
+.smsl > *:hover{
+    border: 1px solid orangered;
+}
