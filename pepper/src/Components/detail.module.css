@@ -134,3 +134,12 @@ select{
 .smsl > *:hover{
     border: 1px solid orangered;
 }
+@media (max-width: 900px) {
+    .main {
+        flex-wrap: wrap;
+    }
+    .qs > *{
+        flex: 1 1 30%;
+    }
+    
+}

@@ -1,0 +1,41 @@
+.items{
+    display: flex;
+    margin: 0.5rem;
+    box-shadow: 5px 5px 5px px rgb(202, 202, 202);
+}
+.ig{
+    width: 40%;
+    padding: 1rem 0.5rem;
+}
+.ig img{
+    width: 100%;
+}
+.deal{
+    margin: 1rem;
+}
+.deal h4{
+    font-weight: 600;
+    font-size: 1.2rem;
+
+}
+.redux{
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    margin: 1rem;
+}
+.redux button{
+    height: 30px;
+    margin: 0.5rem;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+.price{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.rem{
+    font-size: 1rem;
+    border-bottom: 2px solid black;
+}
