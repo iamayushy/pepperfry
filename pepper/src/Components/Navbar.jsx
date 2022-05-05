@@ -1,29 +1,48 @@
 import { useState } from 'react'
 import nav from '../Components/nav.module.css'
 import { Cart } from './Cart'
+import { Modal } from '@mantine/core';
+import { Register } from '../Common/Register';
+import { Login } from '../Common/Login';
 const Navbar = () => {
     const [show, setShow] = useState(false)
-
+    const [opened, setOpened] = useState(false)
+    const [reg, setReg] = useState(false)
     const rev = () => {
         setShow(!show)
     }
-    return(
+    const check = () => {
+        setReg(!reg)
+    }
+    return (
         <div className={nav.container}>
             <section className={nav.navbar}>
-            <section>
-                <a className={nav.logo} href="#">.</a>
-            </section>
-            <section className={nav.search}>
-                <input placeholder='Your door to happiness opens with a search' type="text" name="" id="" />
-                <input type="submit" name="" id="" />
-            </section>
-            <section className={nav.user}>
-               <a href="#"><img src={'https://ii1.pepperfry.com/images/svg/web21-header-help-icon.svg'} alt="help" /></a>
-               <a href="#"><img src={'https://ii1.pepperfry.com/images/svg/icon-profile-21.svg?v=1'} alt="user" /></a>
-                <a href="#"><img src={'https://ii1.pepperfry.com/images/svg/icon-wishlist-21.svg'} alt="love" /></a>
-                <a onClick={rev} href="#"><img src={'https://ii1.pepperfry.com/images/svg/icon-cart-21.svg'} alt="cart" /></a>
-                {show && <Cart close={rev}/>}
-            </section>
+                <section>
+                    <a className={nav.logo} href="#">.</a>
+                </section>
+                <section className={nav.search}>
+                    <input placeholder='Your door to happiness opens with a search' type="text" name="" id="" />
+                    <input type="submit" name="" id="" />
+                </section>
+                <section className={nav.user}>
+                    <a href="#"><img src={'https://ii1.pepperfry.com/images/svg/web21-header-help-icon.svg'} alt="help" /></a>
+                    <a href="#" onClick={() => setOpened(!opened)}><img src={'https://ii1.pepperfry.com/images/svg/icon-profile-21.svg?v=1'} alt="user" /></a>
+                    <a href="#"><img src={'https://ii1.pepperfry.com/images/svg/icon-wishlist-21.svg'} alt="love" /></a>
+                    <a onClick={rev} href="#"><img src={'https://ii1.pepperfry.com/images/svg/icon-cart-21.svg'} alt="cart" /></a>
+                    {show && <Cart close={rev} />}
+                    <div>
+                        <Modal
+                            size='xl'
+                            opened={opened}
+                            onClose={() => setOpened(false)}
+                            
+                        >
+                            {reg === false ? <Register mover={check}/> : <Login mover={check}/>}
+                        </Modal>
+                            
+                           
+                    </div>
+                </section>
             </section>
 
             <section className={nav.links}>
@@ -47,4 +66,4 @@ const Navbar = () => {
         </div>
     )
 }
-export {Navbar}
+export { Navbar }

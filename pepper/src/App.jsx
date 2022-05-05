@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Home/>
-      <Product/>
+      {/* <Home/>
+      <Product/> */}
       <Array/>
 
     </div>

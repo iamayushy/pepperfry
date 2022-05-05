@@ -1,0 +1,42 @@
+.cont{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-evenly;
+}
+.form{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+.form input{
+    color: black;
+    border: 1px solid white;
+    border-bottom: 2px solid rgb(177, 177, 177);
+    outline: none;
+    height: 45px;
+}
+.form input:hover{
+    border-bottom: 2px solid orangered;
+}
+.form input[type='submit']{
+    background-color: orangered;
+    border: 1px solid orangered;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 2px;
+}
+.glo{
+    margin-top: 4rem;
+}
+.glo button{
+    font-size: 1rem;
+    width: 100%;
+    color: orangered;
+    background-color: white;
+    border: 2px solid rgb(179, 179, 179);
+}
+.glo button:hover{
+    border: 2px solid orangered;
+    color: black;
+}

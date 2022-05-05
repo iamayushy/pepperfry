@@ -1,5 +1,7 @@
 import { ProductC } from "../Common/ProductC"
 import ar from '../Pages/arr.module.css'
+import { RadioGroup, Radio, Checkbox, CheckboxGroup } from '@mantine/core';
+
 const Array = () => {
     return (
         <div>
@@ -11,44 +13,45 @@ const Array = () => {
                 <div className={ar.inter}>
                     <div>
                         <div className={ar.fc}>
-                            <h2>Sort By</h2>
-                            <form className={ar.sorting}>
-                                <label className={ar.container}>One
-                                    <input type="radio"  name="radio" />
-                                    <span className={ar.checkmark}></span>
-                                </label>
-                                <label className={ar.container}>Two
-                                    <input type="radio" name="radio" />
-                                    <span className={ar.checkmark}></span>
-                                </label>
-                                <label className={ar.container}>Three
-                                    <input type="radio" name="radio" />
-                                    <span className={ar.checkmark}></span>
-                                </label>
-                    
-                                </form>
-                            <div style={{ marginTop: '8rem' }}>
-                                <form className={ar.sorting}>
 
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span className={ar.label}>Relevance Searh</span>
-                                    </label>
+                            <div className={ar.rgp}>
+                                <RadioGroup
+                                    label="Sort By"
+                                    orientation="vertical"
+                                    color='orange'
+                                    spacing='xl'
+                                    required
+                                >
+                                    <Radio value="react" label="Relevance" />
+                                    <Radio value="svelte" label="LOW TO HIGH PRICE" />
+                                    <Radio value="ng" label="HIGH TO LOW PRICE" />
+                                </RadioGroup>
+                            </div>
 
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span className={ar.label}>High To Low Price</span>
-                                    </label>
+                            <div className={ar.check}>
 
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span className={ar.label}>Low To High Price</span>
-                                    </label>
-
-
-                                </form>
+                                <CheckboxGroup
+                                    defaultValue={['Goodrej']}
+                                    label="Brands"
+                                    orientation="vertical"
+                                    size="md"
+                                    color="orange"
+                                    required
+                                >
+                                    <Checkbox value="Goodrej" label="Goodrej" />
+                                    <Checkbox value="Maint" label="Maint" />
+                                    <Checkbox value="Antd" label="Antd" />
+                                    <Checkbox value="Melion" label="Melion" />
+                                    <Checkbox value="Jumba" label="Jumba" />
+                                    <Checkbox value="Bulma" label="Bulma" />
+                                </CheckboxGroup>
                             </div>
                         </div>
+
+
+
+
+
                     </div>
 
                     <div className={ar.par}>
