@@ -4,16 +4,19 @@ import { Cart } from './Cart'
 import { Modal } from '@mantine/core';
 import { Register } from '../Common/Register';
 import { Login } from '../Common/Login';
+import { Big } from '../Common/Big';
 const Navbar = () => {
     const [show, setShow] = useState(false)
     const [opened, setOpened] = useState(false)
     const [reg, setReg] = useState(false)
+    const [den, setDen] = useState(false)
     const rev = () => {
         setShow(!show)
     }
     const check = () => {
         setReg(!reg)
     }
+   
     return (
         <div className={nav.container}>
             <section className={nav.navbar}>
@@ -47,22 +50,25 @@ const Navbar = () => {
 
             <section className={nav.links}>
                 <ul>
-                    <li> <a href="#">Furniture</a> </li>
-                    <li> <a href="#">Sofas & Recliners</a> </li>
-                    <li> <a href="#">Storage</a> </li>
-                    <li> <a href="#">Beds & Mattresses</a> </li>
-                    <li> <a href="#">Dining & Bar</a> </li>
-                    <li> <a href="#">Wall Accents</a> </li>
-                    <li> <a href="#">Decor</a> </li>
-                    <li> <a href="#">Lighting</a> </li>
-                    <li> <a href="#">Home Linen</a> </li>
-                    <li> <a href="#">Carpets</a> </li>
-                    <li><a href="$">Garden & Outdoor</a></li>
+                    <li onClick={() => setDen(!den)}><a href="#">Sofas & Recliners</a> </li>
+                    <li onClick={() => setDen(!den)}> <a href="#">Storage</a> </li>
+                    <li onClick={() => setDen(!den)}> <a href="#">Furniture</a> </li>
+                    <li onClick={() => setDen(!den)}> <a href="#">Beds & Mattresses</a> </li>
+                    <li onClick={() => setDen(!den)}> <a href="#">Dining & Bar</a> </li>
+                    <li onClick={() => setDen(!den)}> <a href="#">Wall Accents</a> </li>
+                    <li onClick={() => setDen(!den)}> <a href="#">Decor</a> </li>
+                    <li onClick={() => setDen(!den)}> <a href="#">Lighting</a> </li>
+                    <li onClick={() => setDen(!den)}> <a href="#">Home Linen</a> </li>
+                    <li onClick={() => setDen(!den)}> <a href="#">Carpets</a> </li>
+                    <li onClick={() => setDen(!den)}><a href="$">Garden & Outdoor</a></li>
                     <li><a href="$">Appliances</a></li>
                     <li><a href="$">Modular</a></li>
 
                 </ul>
+                
             </section>
+            {den && <Big/>}
+            
         </div>
     )
 }

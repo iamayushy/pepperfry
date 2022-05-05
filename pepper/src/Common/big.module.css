@@ -1,0 +1,68 @@
+.cont{
+    width: 88%;
+    margin: 0px auto;
+    display: flex;
+    background-color: white;
+    min-height: 78vh;
+    gap: 2rem;
+    font-size: 0.9rem;
+    box-shadow: 8px 8px 8px whitesmoke;
+    border: 1px solid rgb(179, 197, 179);
+    border-radius: 5px;
+    
+}
+.cont ul{
+    list-style: none;
+    
+}
+.cat{
+    border-right: 0.5px solid rgb(179, 197, 179);
+    padding: 0,6rem 3rem;
+}
+.cl li{
+    margin-top: 1rem;
+    display: block;
+    
+}
+.cl li a{
+    display: block;
+    color: black;
+    font-weight: 500;
+}
+.cl li a:hover{
+    display: block;
+    background-color: rgb(197, 197, 197);
+}
+.sub ul li{
+    
+    margin-top: 1rem;
+}
+
+.cont ul li a{
+    color: black;
+}
+.comm{
+    display: flex;
+   
+}
+.pic{
+    width: 50%;
+}
+
+.comm ul li{
+    margin-top: 1rem;
+}
+.comm ul li a:hover{
+    color:orangered;
+}
+.ops{
+    animation: sh 0.4s linear forwards;
+}
+@keyframes sh{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

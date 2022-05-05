@@ -1,6 +1,33 @@
 import {FcGoogle} from 'react-icons/fc'
 import reg from '../Common/reg.module.css'
+import { useState } from 'react'
+
 const Register = ({mover}) => {
+
+    
+    const [userDetail, setUserDetail] = useState({
+        name:'',
+        email:'',
+        password:''
+    })
+    const getChange = (e)=> {
+        const {value, name} = e.target
+
+        setUserDetail({
+            ...userDetail,
+            [name]:value
+        })
+        console.log(userDetail)
+    }
+
+    const getIn = (e) => {
+        e.preventDefault()
+    
+    }
+    
+
+
+
     return(
         <div className={reg.cont}>
             <div className={reg.ib}>
@@ -8,10 +35,10 @@ const Register = ({mover}) => {
             </div>
 
             <div className={reg.fm}>
-                <form className={reg.form}>
-                    <input required type="text" placeholder="Name" />
-                    <input required type="email" placeholder="Email"/>
-                    <input required placeholder='Password' type="password" pattern="password"/>
+                <form className={reg.form} onSubmit={getIn}>
+                    <input onChange={getChange} value={userDetail.name} required type="text" placeholder="Name" name='name'/>
+                    <input onChange={getChange} value={userDetail.email} required type="email" placeholder="Email" name='email'/>
+                    <input onChange={getChange} value={userDetail.password} placeholder='Password' type="password" name='password'/>
                     <input  type="submit" value="Register"/>
                     <p>By registering you agree to our <span style={{textDecorationLine:'underline'}}>Terms & Conditions</span></p>
 
