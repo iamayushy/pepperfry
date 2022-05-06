@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../Redux/Product/action";
 
 const Array = () => {
-    const task = useSelector((store) => store.products)
+    const task = useSelector((store) => store.products.products)
     console.log(task)
     const dispatch = useDispatch()
     const params = useParams()

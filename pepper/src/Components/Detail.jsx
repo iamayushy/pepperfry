@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import de from '../Components/detail.module.css'
 import { getOneProducts } from '../Redux/Product/action'
+import {BsHeart, BsSuitHeartFill} from 'react-icons/bs'
 
 
 
 const Detail = () => {
-    const detail = useSelector(store => store.details)
+    const detail = useSelector(store => store.products.details)
     const dispatch = useDispatch()
     const params = useParams()
     const np = '';
@@ -15,6 +16,8 @@ const Detail = () => {
     const [simage, setimage] = useState([])
     const [images, setImages] = useState([])
     const [loading, setLoading] = useState(true)
+    const [wish, setWish]= useState(false)
+    const [cout, setCout] = useState(1)
     useEffect(() => {
 
         dispatch(getOneProducts(params.id, params.c))
@@ -29,14 +32,30 @@ const Detail = () => {
     },[])
 
     console.log(detail)
-    // const image = 
-    //  [
-    //      'https://ii1.pepperfry.com/media/catalog/product/g/e/800x880/genji-study-table-in-columbia-walnut-finish-by-mintwud-genji-study-table-in-columbia-walnut-finish-b-6dhah3.jpg',
-    //      'https://ii1.pepperfry.com/media/catalog/product/g/e/800x880/genji-writing-desk-in-columbia-walnut-finish-by-mintwud-genji-writing-desk-in-columbia-walnut-finish-xqyqhv.jpg',
-    //      'https://ii1.pepperfry.com/media/catalog/product/g/e/800x880/genji-writing-desk-in-columbia-walnut-finish-by-mintwud-genji-writing-desk-in-columbia-walnut-finish-lfvm6y.jpg'
-    // ]
+    const handleCount= (e) => {
+        setCout(e.target.value)
+    }
+    const ADDTOCART = (cart) => {
+        fetch(`http://localhost:3004/${cart}`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json',
+            },
+            body: JSON.stringify(
+                {
+                    "title":detail.title,
+                    "name":detail.name,
+                    "Price":detail.Price,
+                    "count":cout,
+                    "image":images[1]
+                }
+            )
+        })
+        .then(res => console.log(res))
+    }
+   
     
-    const [image, setImage] = useState([])
+    const [image, setImage] = useState(0)
     const next = () => {
         image === images.length - 1 ? setImage(0) : setImage(image + 1)
     }
@@ -58,7 +77,7 @@ const Detail = () => {
                 <div className={de.big}>
                     <button className={de.mover} onClick={prev} >{'<'}</button>
                     <div>
-                       <img src={images[image]} alt="cornman" />
+                       <img src={images[image+1]} alt="cornman" />
                     </div>
                     <button className={de.mover} onClick={next}>{'>'}</button>
                 </div>
@@ -79,6 +98,7 @@ const Detail = () => {
                 <div className={de.pname}>
                     <h3>{detail.title}</h3>
                     <p>{detail.name}</p>
+                    {wish === false ?<BsHeart onClick={() => setWish(!wish)} style={{float:'right', marginTop:'-5rem'}} size='2rem'/>:<BsSuitHeartFill onClick={() => setWish(!wish)} style={{float:'right', marginTop:'-5rem'}} color="red" size='2rem'/>}
                 </div>
                 <div className={de.rprice}>
                     <span>
@@ -99,7 +119,7 @@ const Detail = () => {
 
                 <div className={de.quant}>
                     <form className={de.qs}>
-                        <select>
+                        <select onChange={handleCount}>
                             <option value="1" > {'Qty'} 1</option>
                             <option value="2" > {'Qty'} 2</option>
                             <option value="3" > {'Qty'} 3</option>
@@ -107,7 +127,7 @@ const Detail = () => {
                             <option value="5" > {'Qty'} 5</option>
                             <option value="6" > {'Qty'} 6</option>
                         </select>
-                        <input id='cart' value='ADD TO CART' type="button"/>
+                        <input onClick={() => ADDTOCART('cart')} id='cart' value='ADD TO CART' type="button"/>
                         <input id = 'some' value='BUY NOW' type="submit"/>
                     </form>
                 </div>
