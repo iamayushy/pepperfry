@@ -1,7 +1,9 @@
 import "antd/dist/antd.css";
+import { Route, Routes } from "react-router-dom";
 import './App.css'
 import { Big } from "./Common/Big";
 import { ProductC } from "./Common/ProductC";
+import { Detail } from "./Components/Detail";
 import { Hero } from "./Components/Hero";
 import { Navbar } from "./Components/Navbar";
 import { Array } from "./Pages/Array";
@@ -13,9 +15,16 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      {/* <Home/> */}
-      <Array/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/:id" element={<Array/>}/>
+        <Route path="/:id/:c" element={<Detail/>}/>
+      </Routes>
+       
+
       
+
+     
 
     </div>
   )

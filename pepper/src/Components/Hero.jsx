@@ -1,5 +1,6 @@
 import { Carousel } from 'antd'
 import 'antd/dist/antd.css'
+import { Link, Outlet } from 'react-router-dom'
 import hero from '../Components/hero.module.css'
 import { Banner } from './Banner'
 import { Decor } from './Decor'
@@ -37,21 +38,22 @@ const Hero = () => {
                 <h1>Shop By Room</h1>
                 <section className={hero.cat}>
                     <section className={hero.nav}>
-                        <img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_1__2x_22042022.jpg'} alt="" />
+                      <Link to={`/sofa`}><img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_1__2x_22042022.jpg'} alt="" /></Link>
                         <p>Living Room</p>
                     </section>
                     <section className={hero.nav}>
-                        <img src={'https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_2__2x_22042022.jpg'} alt="" />
+                       <Link to={`/table`}><img src={'https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_2__2x_22042022.jpg'} alt="" /></Link>
                         <p>Work From Home</p>
                     </section>
                     <section className={hero.nav}>
-                        <img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_3__2x_22042022.jpg'} alt="" />
+                       <Link to={`/bed`}> <img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_3__2x_22042022.jpg'} alt="" /></Link>
                         <p>Bedroom</p>
                     </section>
                     <section className={hero.nav}>
-                        <img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_4__2x_22042022.jpg'} alt="" />
+                       <Link to={'/kids'}> <img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_4__2x_22042022.jpg'} alt="" /></Link>
                         <p>Kids Room</p>
                     </section>
+                    
                 </section>
                 <section className={hero.option}>
                     <h1 className={hero.op}>What's Everyone Eyeing ?</h1>

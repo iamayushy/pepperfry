@@ -2,18 +2,22 @@ import { ProductC } from "../Common/ProductC"
 import ar from '../Pages/arr.module.css'
 import { RadioGroup, Radio, Checkbox, CheckboxGroup } from '@mantine/core';
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../Redux/Product/action";
 
 const Array = () => {
+    const task = useSelector((store) => store.products)
+    console.log(task)
+    const dispatch = useDispatch()
+    const params = useParams()
     const [da, setDa] = useState([])
     const [cbox, setCbox] = useState([])
     useEffect(() => {
-        fetch('http://localhost:3004/Sofa')
-        .then((res)=> res.json())
-        .then((dat) => setDa(dat))
-    },[])
-    
+        dispatch(getProducts(params.id))
+    },[params.id])
     const [rad, setRad] = useState('normal')
-    rad === 'lh'? da.sort((a, b) => a.Price - b.Price):da.sort((a, b) => b.Price - a.Price)
+    rad === 'lh'? task.sort((a, b) => a.Price - b.Price):task.sort((a, b) => b.Price - a.Price)
     
         
     return (
@@ -21,7 +25,7 @@ const Array = () => {
             <div className={ar.contain}>
                 <div className={ar.dis}>
                     <p>Showing Search Results For</p>
-                    <h1>Sofas</h1>
+                    <h1>{`" ${params.id} "`}</h1>
                 </div>
                 <div className={ar.inter}>
                     <div>
@@ -55,7 +59,7 @@ const Array = () => {
                                     required
                                 >
 
-                                    {da.map((br) => (
+                                    {task.map((br) => (
                                         
                                         <Checkbox key={br.id} value={br.title} label={br.title}/>
                                          
@@ -77,8 +81,10 @@ const Array = () => {
                     </div>
 
                     <div className={ar.par}>
-                        {da.map((all => (
+                        {task.map((all => (
                             <ProductC key={all.id}
+                            pid={all.id}
+                            rou={params.id}
                             name={all.name}
                             brand={all.title}
                             price={all.Price}

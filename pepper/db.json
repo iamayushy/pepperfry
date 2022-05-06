@@ -6,6 +6,7 @@
       "title": "Goodrej",
       "name":"Amanda Corner Sofa",
       "Price": 45000,
+      "type":"sofa",
       "image":[
         "https://ii2.pepperfry.com/media/catalog/product/a/m/494x544/amanda-seater-sofa-set--2-2-1-c--in-dark-grey-colour-by-primrose-amanda-seater-sofa-set--2-2-1-c--in-xuqjgk.jpg",
         "https://ii1.pepperfry.com/media/catalog/product/a/m/568x284/amanda-seater-sofa-set--2-2-1-c--in-dark-grey-colour-by-primrose-amanda-seater-sofa-set--2-2-1-c--in-gxcruq.jpg",
@@ -18,6 +19,7 @@
       "title": "Simple Merny",
       "name":"Maria DB Sofa",
       "Price": 25000,
+      "type":"sofa",
       "image":[
         "https://ii3.pepperfry.com/media/catalog/product/j/o/494x544/jordan-rhs-sectional-sofa-in-blue-colour-jordan-rhs-sectional-sofa-in-blue-colour-lacgro.jpg",
         "https://ii1.pepperfry.com/media/catalog/product/j/o/568x284/jordan-rhs-sectional-sofa-in-blue-colour-jordan-rhs-sectional-sofa-in-blue-colour-2hgeay.jpg",
@@ -30,6 +32,7 @@
       "title": "Mantines",
       "name":"Lordes Full Sofa",
       "Price": 10000,
+      "type":"sofa",
       "image":[
         "https://ii1.pepperfry.com/media/catalog/product/r/o/494x544/rochison-6-seater-lhs-sofa-in-grey---black-colour-by-furny-rochison-6-seater-lhs-sofa-in-grey---blac-gg0fz7.jpg",
         "https://ii1.pepperfry.com/media/catalog/product/j/o/568x284/jordan-lhs-sectional-sofa-with-pouffe-in-beige-and-brown-colour-by-muebles-casa-jordan-lhs-sectional-fsysi2.jpg",
@@ -42,6 +45,7 @@
       "title": "Mantine",
       "name":"Sigma Sofa",
       "Price":40000,
+      "type":"sofa",
       "image":[
         "https://ii3.pepperfry.com/media/catalog/product/n/i/494x544/niki-2-seater-sofa-in-yellow-colour-by-febonic-niki-2-seater-sofa-in-yellow-colour-by-febonic-daucqx.jpg",
         "https://ii1.pepperfry.com/media/catalog/product/n/i/800x400/niki-3-seater-sofa-in-yellow-colour-by-febonic-niki-3-seater-sofa-in-yellow-colour-by-febonic-rypxzi.jpg",
@@ -55,6 +59,7 @@
       "title": "Man Com",
       "name":"Sigma Sofa",
       "Price":40000,
+      "type":"sofa",
       "image":[
         "https://ii2.pepperfry.com/media/catalog/product/o/r/494x544/orting-solid-wood-2-seater-sofa-in-provincial-teak-finish-by-woodsworth-orting-solid-wood-2-seater-s-r5b4fy.jpg",
         "https://ii1.pepperfry.com/media/catalog/product/n/i/800x400/niki-3-seater-sofa-in-maroon-colour-by-febonic-niki-3-seater-sofa-in-maroon-colour-by-febonic-mordrv.jpg",
@@ -69,6 +74,7 @@
       "title": "Antd",
       "name":"Sigma Sofa",
       "Price":240000,
+      "type":"sofa",
       "image":[
         "https://ii3.pepperfry.com/media/catalog/product/t/a/494x544/tanaka-3-seater-sofa-in-chocolate-brown-colour-by-mintwud-tanaka-3-seater-sofa-in-chocolate-brown-co-kiqq3i.jpg",
         "https://ii1.pepperfry.com/media/catalog/product/c/h/800x400/charles-3-seater-sofa-in-graphite-grey-colour-by-durian-charles-3-seater-sofa-in-graphite-grey-colou-5qctuj.jpg",
@@ -82,6 +88,7 @@
       "title": "Melion",
       "name":"Sigma Sofa XL",
       "Price":3000000,
+      "type":"sofa",
       "image":[
         "https://ii3.pepperfry.com/media/catalog/product/r/i/494x544/riviera-6-seater-sofa-in-grey---yellowcolour-by-arra-riviera-6-seater-sofa-in-grey---yellowcolour-by-ixzvhi.jpg",
         "https://ii1.pepperfry.com/media/catalog/product/r/i/800x400/riviera-6-seater-sofa-in-grey---yellowcolour-by-arra-riviera-6-seater-sofa-in-grey---yellowcolour-by-ybxowa.jpg",
@@ -97,6 +104,7 @@
       "title": "Jumba",
       "name":"Sigma Sofa",
       "Price":420000,
+      "type":"sofa",
       "image":[
         "https://ii3.pepperfry.com/media/catalog/product/t/a/494x544/tanaka-3-seater-sofa-in-chocolate-brown-colour-by-mintwud-tanaka-3-seater-sofa-in-chocolate-brown-co-kiqq3i.jpg",
         "https://ii1.pepperfry.com/media/catalog/product/v/e/800x400/ventonsia-rhs-5-seater-fabric-l-shape-sofa-in-cream---pink-colour-by-euskara-homes-ventonsia-rhs-5-s-lx5syu.jpg",
@@ -111,6 +119,7 @@
       "title": "Bulma",
       "name":"Beta Sofa",
       "Price":40000,
+      "type":"sofa",
       "image":[
         "https://ii1.pepperfry.com/media/catalog/product/c/a/494x544/caspreo-6-seater--lhs--sofa-set--in-dark-grey-colour-by-furny-caspreo-6-seater--lhs--sofa-set--in-da-jiyqwo.jpg",
         "https://ii1.pepperfry.com/media/catalog/product/e/s/800x400/esin-rhs-6-seater-fabric--l-shape-sofa-with-1-pouffee-in-brown---black-colour-by-euskara-homes-esin--snjbcd.jpg",
@@ -126,7 +135,7 @@
         "id":1,
         "title":"Serum",
         "name":"The Big Table",
-        "price":3000,
+        "Price":3000,
         "image":[
           "https://ii1.pepperfry.com/media/catalog/product/g/e/800x880/genji-study-table-in-columbia-walnut-finish-by-mintwud-genji-study-table-in-columbia-walnut-finish-b-6dhah3.jpg",
           "https://ii1.pepperfry.com/media/catalog/product/g/e/800x880/genji-study-table-in-columbia-walnut-finish-by-mintwud-genji-study-table-in-columbia-walnut-finish-b-6dhah3.jpg",
@@ -137,7 +146,7 @@
         "id":2,
         "title":"Syndicate",
         "name":"Bell Bottom Pro",
-        "price":10000,
+        "Price":10000,
         "image":[
           "https://ii1.pepperfry.com/media/catalog/product/g/u/800x880/guide-04-study-table-guide-04-study-table-sxdb7q.jpg",
           "https://ii1.pepperfry.com/media/catalog/product/g/u/800x880/guide-04-study-table-guide-04-study-table-sxdb7q.jpg",
@@ -147,7 +156,7 @@
         "id":3,
         "title":"Berums",
         "name":"Apple Play Box",
-        "price":32000,
+        "Price":32000,
         "image":[
           "https://ii1.pepperfry.com/media/catalog/product/a/t/800x880/attica-study-table-in-straight-black-wenge-finish---mintwud-by-pepperfry-attica-study-table-in-strai-n6ylxg.jpg",
           "https://ii1.pepperfry.com/media/catalog/product/a/t/800x880/attica-study-table-in-straight-black-wenge-finish---mintwud-by-pepperfry-attica-study-table-in-strai-n6ylxg.jpg",
@@ -158,7 +167,7 @@
         "id":4,
         "title":"Amara",
         "name":"Hattori Table",
-        "price":1200,
+        "Price":1200,
         "image":[
           "https://ii1.pepperfry.com/media/catalog/product/b/e/800x880/berlin-computer-table-with-printer-shelf-in-intel-beige-colour-by-kawachi-berlin-computer-table-with-cjacyp.jpg",
           "https://ii1.pepperfry.com/media/catalog/product/b/e/800x880/berlin-computer-table-with-printer-shelf-in-intel-beige-colour-by-kawachi-berlin-computer-table-with-cjacyp.jpg",
@@ -169,7 +178,7 @@
         "id":5,
         "title":"Serums",
         "name":"The Big Table",
-        "price":3000,
+        "Price":3000,
         "image":[
           "https://ii1.pepperfry.com/media/catalog/product/s/o/800x880/sos-carter-workdesk-with-shelf-in-lorraine-wlanut---silver-grey-with-metal-understructure-sos-carter-lf4cqt.jpg",
           "https://ii1.pepperfry.com/media/catalog/product/s/o/800x880/sos-carter-workdesk-with-shelf-in-lorraine-wlanut---silver-grey-with-metal-understructure-sos-carter-lf4cqt.jpg",
@@ -180,7 +189,7 @@
         "id":6,
         "title":"Nilkamal",
         "name":"Simple Play Table",
-        "price":43000,
+        "Price":43000,
         "image":[
           "https://ii1.pepperfry.com/media/catalog/product/s/h/800x880/shuffle-foldable-wall-mounted-study-table-in-teak-finish-by-duroflex-shuffle-foldable-wall-mounted-s-dqigyv.jpg",
           "https://ii1.pepperfry.com/media/catalog/product/s/h/800x880/shuffle-foldable-wall-mounted-study-table-in-teak-finish-by-duroflex-shuffle-foldable-wall-mounted-s-dqigyv.jpg",
@@ -191,7 +200,7 @@
         "id":7,
         "title":"Cello",
         "name":"Long Moveable Chair",
-        "price":5000,
+        "Price":5000,
         "image":[
           "https://ii1.pepperfry.com/media/catalog/product/a/l/800x880/alicia-wall-mounted-folding-table-with-2-floating-shelves-in-intel-beige-colour-by-kawachi-alicia-wa-pvfxbx.jpg"
           ,"https://ii1.pepperfry.com/media/catalog/product/a/l/800x880/alicia-wall-mounted-folding-table-with-2-floating-shelves-in-intel-beige-colour-by-kawachi-alicia-wa-pvfxbx.jpg",
@@ -202,7 +211,7 @@
         "id":8,
         "title":"Trello",
         "name":"Twilio Table",
-        "price":334000,
+        "Price":334000,
         "image":[
           "https://ii1.pepperfry.com/media/catalog/product/c/h/800x880/cherry-study-table-in-red-colour-by-a-globia-creations-cherry-study-table-in-red-colour-by-a-globia--yeu99p.jpg",
           "https://ii1.pepperfry.com/media/catalog/product/c/h/800x880/cherry-study-table-in-red-colour-by-a-globia-creations-cherry-study-table-in-red-colour-by-a-globia--yeu99p.jpg",
