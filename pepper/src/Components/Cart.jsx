@@ -4,11 +4,14 @@ import {Group} from '@mantine/core'
 import { Pbox } from './Pbox'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCart } from '../Redux/Cart/action'
+import { useNavigate } from 'react-router-dom'
 const Cart = () => {
+    const navs = useNavigate()
     const allcart = useSelector(store => store.cart.cart)
     const dispatch = useDispatch()
     const [carts, setcartDetails] = useState([])
     const [ac, setAC] = useState(0)
+    const [count, setCount] = useState(0)
     const click = [
         {name:'MY CART', index: 0},
         {name:'MY WISHLIST', index: 1},
@@ -23,6 +26,47 @@ const Cart = () => {
         dispatch(getCart())
         
     }, [])
+
+    
+    
+
+    const UpdateCart = (indo, data) => {
+        fetch(`http://localhost:3004/cart/${indo}`, {
+            method: "PUT",
+            body: JSON.stringify({
+                ...data,
+                "count": data.count + 1
+            }),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+            .then((response) => response.json())
+            .then((json) => dispatch(getCart()))
+            .catch((err) => console.log(err));
+    }
+
+    const handleDelete = (id) => {
+        fetch(`http://localhost:3004/cart/${id}`, {
+            method: "DELETE",
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          })
+            .then((response) => response.json())
+            .then((json) => dispatch(getCart()))
+            .catch((err) => console.log(err));
+    }
+
+    const UpdateCartD = (indo, data) => {
+        fetch(`http://localhost:3004/cart/${indo}`, {
+            method: "PUT",
+            body: JSON.stringify({
+                ...data,
+                "count": data.count - 1
+            }),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+            .then((response) => response.json())
+            .then((json) => dispatch(getCart()))
+            .catch((err) => console.log(err));
+    }
 
     
     
@@ -52,6 +96,9 @@ const Cart = () => {
             desc={usr.title}
             number={usr.count}
             image={usr.image}
+            increase={() =>UpdateCart(usr.id, usr)}
+            reduce={() => UpdateCartD(usr.id,usr)}
+            handle={() => handleDelete(usr.id)}
             />))}
             </div>
 
@@ -70,7 +117,7 @@ const Cart = () => {
             
             {/* </div> */}
             <Group position='center'>
-            <button className={cart.confirm}>Confirm The Order</button>
+            <button onClick={() => allcart.length > 0? navs('/checkout'):navs('/')} className={cart.confirm}>{allcart.length > 0 ? 'Confirm Your Order': 'Cart Is Empty'}</button>
             </Group>
         </div>
     </>

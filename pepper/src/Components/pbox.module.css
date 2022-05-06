@@ -39,3 +39,10 @@
     font-size: 1rem;
     border-bottom: 2px solid black;
 }
+.rems{
+    cursor: pointer;
+}
+.rems:hover{
+    font-family: 600;
+    transform: translateY(50%);
+}

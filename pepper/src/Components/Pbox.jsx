@@ -1,7 +1,11 @@
 import pb from '../Components/pbox.module.css'
 import rev from '../assets/rev.png'
+import { useParams } from 'react-router-dom'
+const Pbox = ({handle,name, desc, price, number, out, image, increase, reduce}) => {
 
-const Pbox = ({name, desc, price, number, out, image, increase, reduce}) => {
+    
+
+
     return(
         <>
         <div className={pb.items}>
@@ -20,7 +24,7 @@ const Pbox = ({name, desc, price, number, out, image, increase, reduce}) => {
                                 <button onClick={increase}>+</button>
                             </div>
                             <div onClick={out} className={pb.rem}>
-                                Remove
+                                <p onClick={handle} className={pb.rems}>Remove</p>
                             </div>
                         </div>
                     </div>
