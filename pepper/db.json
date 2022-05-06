@@ -225,7 +225,25 @@
     }
   ],
   "bed": {},
-  "cart": [],
+  "cart": [
+    {
+      "id": 7,
+      "title": "Melion",
+      "name": "Sigma Sofa XL",
+      "Price": 3000000,
+      "type": "sofa",
+      "count": 10,
+      "image": "https://ii1.pepperfry.com/media/catalog/product/r/i/800x400/riviera-6-seater-sofa-in-grey---yellowcolour-by-arra-riviera-6-seater-sofa-in-grey---yellowcolour-by-ybxowa.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Trello",
+      "name": "Twilio Table",
+      "Price": 334000,
+      "count": 11,
+      "image": "https://ii1.pepperfry.com/media/catalog/product/c/h/800x880/cherry-study-table-in-red-colour-by-a-globia-creations-cherry-study-table-in-red-colour-by-a-globia--yeu99p.jpg"
+    }
+  ],
   "wish": [
     {
       "id": 1,
@@ -234,6 +252,168 @@
       "Price": 2000,
       "count": 1,
       "image": "https://ii1.pepperfry.com/media/catalog/product/e/s/800x400/esin-rhs-6-seater-fabric--l-shape-sofa-with-1-pouffee-in-brown---black-colour-by-euskara-homes-esin--snjbcd.jpg"
+    }
+  ],
+  "user": [
+    {
+      "name": "Maria",
+      "city": "City Baba",
+      "state": "Maha",
+      "address": "ddbore jwhrobevic cebcoewi 384",
+      "phone": "83929474838934",
+      "id": 1
+    },
+    {
+      "name": "wjbdeugd",
+      "city": "bdedbworilfgwp",
+      "state": "hdoewugbfirwpg",
+      "address": "hdewofgbierfgciregp",
+      "phone": "9898469385",
+      "id": 2
+    },
+    {
+      "name": "wjbdeugd",
+      "city": "bdedbworilfgwp",
+      "state": "hdoewugbfirwpg",
+      "address": "hdewofgbierfgciregp",
+      "phone": "9898469385",
+      "id": 3
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 4
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 5
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 6
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 7
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 8
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 9
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 10
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 11
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 12
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 13
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 14
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 15
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Manika",
+      "address": "wndenfiorefio",
+      "phone": "389249348934",
+      "id": 16
+    },
+    {
+      "name": "",
+      "city": "",
+      "state": "",
+      "address": "",
+      "phone": "",
+      "id": 17
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Maha",
+      "address": "ajsj dkendenfri",
+      "phone": "283744958",
+      "id": 18
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbao",
+      "state": "Maha",
+      "address": "9289284",
+      "phone": "308483430750",
+      "id": 19
+    },
+    {
+      "name": "Ayush",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "address": "Ghatkopar West",
+      "phone": "9892176652",
+      "id": 20
     }
   ]
 }

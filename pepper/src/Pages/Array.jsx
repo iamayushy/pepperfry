@@ -12,12 +12,24 @@ const Array = () => {
     const dispatch = useDispatch()
     const params = useParams()
     const [da, setDa] = useState([])
-    const [cbox, setCbox] = useState([])
+    const [cbox, setCbox] = useState(['Mantine'])
     useEffect(() => {
         dispatch(getProducts(params.id))
     },[params.id])
     const [rad, setRad] = useState('normal')
     rad === 'lh'? task.sort((a, b) => a.Price - b.Price):task.sort((a, b) => b.Price - a.Price)
+    const handl= () => {
+       console.log(rad);
+    }
+    
+    
+    let ans = []
+    cbox.forEach(ele => {
+      ans =  task.filter((ans) => ans.title === ele)
+      
+        
+    })
+    
     
         
     return (
@@ -81,6 +93,19 @@ const Array = () => {
                     </div>
 
                     <div className={ar.par}>
+
+
+                        {
+                            ans.map((all => {
+                            return <ProductC key={all.id}
+                                pid={all.id}
+                                rou={params.id}
+                                name={all.name}
+                                brand={all.title}
+                                price={all.Price}
+                                image={all.image[0]}/>
+                            }))
+                        }
                         {task.map((all => (
                             <ProductC key={all.id}
                             pid={all.id}

@@ -10,6 +10,7 @@ const Register = ({mover}) => {
         email:'',
         password:''
     })
+    
     const getChange = (e)=> {
         const {value, name} = e.target
 
@@ -22,6 +23,11 @@ const Register = ({mover}) => {
 
     const getIn = (e) => {
         e.preventDefault()
+        fetch('https://reqres.in/api/logi',{
+            method:'POST',
+            body:JSON.stringify(userDetail)
+        })
+        .then((res) => console.log(res))
     
     }
     

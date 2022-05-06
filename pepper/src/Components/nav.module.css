@@ -79,3 +79,11 @@
     border-bottom: 4px solid orangered;
     padding-bottom: 0.8rem;
 }
+.cart::after{
+    content: '';
+    position: absolute;
+    background-color: orangered;
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+}

@@ -38,3 +38,29 @@
 .fed > * {
     flex: 1 1 50%;
 }
+.den{
+    border: 1px solid rgb(204, 204, 204);
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.or img{
+ width: 30%;
+}
+.or{
+    margin-top: 1rem;
+    background-color: whitesmoke;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+.or >*{
+    flex: 1 1 20%;
+}
+.os{
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid rgb(204, 204, 204);
+}
