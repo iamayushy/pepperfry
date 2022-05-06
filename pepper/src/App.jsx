@@ -10,7 +10,7 @@ import { Array } from "./Pages/Array";
 import { CheckOut } from "./Pages/CheckOut";
 import { Home } from "./Pages/Home";
 import { Product } from "./Pages/Product";
-
+import dam from './assets/footer.png'
 function App() {
   
   return (
@@ -24,7 +24,9 @@ function App() {
       </Routes>
        
 
-      
+      <div id="foor">
+      <img src={dam} alt="" />
+      </div>
 
      
 

@@ -55,5 +55,8 @@
      flex-direction: column;
      align-items: center;
     }
-    
+    .rgp{
+        display: flex;
+        
+    }
 }

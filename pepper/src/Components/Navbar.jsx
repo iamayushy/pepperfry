@@ -46,7 +46,7 @@ const Navbar = () => {
                     <a href="#"><img src={'https://ii1.pepperfry.com/images/svg/web21-header-help-icon.svg'} alt="help" /></a>
                     <a href="#" onClick={() => setOpened(!opened)}><img src={'https://ii1.pepperfry.com/images/svg/icon-profile-21.svg?v=1'} alt="user" /></a>
                     <a href="#"><img src={'https://ii1.pepperfry.com/images/svg/icon-wishlist-21.svg'} alt="love" /></a>
-                    <a onClick={rev} href="#"><img src={'https://ii1.pepperfry.com/images/svg/icon-cart-21.svg'} alt="cart" /></a>
+                    <a className={nav.cart} onClick={rev} href="#"><img src={'https://ii1.pepperfry.com/images/svg/icon-cart-21.svg'} alt="cart" /></a>
                     <Drawer
                     position="right"
                     opened={show}
