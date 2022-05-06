@@ -1,30 +1,43 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import nav from '../Components/nav.module.css'
 import { Cart } from './Cart'
 import { Modal } from '@mantine/core';
 import { Register } from '../Common/Register';
 import { Login } from '../Common/Login';
 import { Big } from '../Common/Big';
+import { Link, useNavigate } from 'react-router-dom';
 const Navbar = () => {
     const [show, setShow] = useState(false)
     const [opened, setOpened] = useState(false)
     const [reg, setReg] = useState(false)
     const [den, setDen] = useState(false)
+    const [search, setSearch] = useState('')
+    const [find, setFind] = useState('')
+    const navigate = useNavigate()
     const rev = () => {
         setShow(!show)
     }
     const check = () => {
         setReg(!reg)
     }
+    const handleChange = (e) => {
+      e.key === 'Enter'? setFind(search):'';
+      
+    }
+    useEffect(() => {
+        navigate(`${find}`)
+        
+    },[find])
+   
    
     return (
         <div className={nav.container}>
             <section className={nav.navbar}>
                 <section>
-                    <a className={nav.logo} href="#">.</a>
+                    <Link className={nav.logo} to="/">.</Link>
                 </section>
                 <section className={nav.search}>
-                    <input placeholder='Your door to happiness opens with a search' type="text" name="" id="" />
+                    <input onKeyDown={handleChange} onChange={(e) => setSearch(e.target.value)}  placeholder='Your door to happiness opens with a search' type="text" name="" id="" />
                     <input type="submit" name="" id="" />
                 </section>
                 <section className={nav.user}>
