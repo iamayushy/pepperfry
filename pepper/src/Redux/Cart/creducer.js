@@ -1,6 +1,7 @@
 import { FETCH_CART } from "./action"
 
 const init = {
+   
     cart : []
 }
 
@@ -9,7 +10,10 @@ const creducer = (store = init, action) => {
         case FETCH_CART:
             return{
                 ...store,
-                cart:action.payload
+                
+                cart:action.payload,
+               
+              
             }
         
         default:

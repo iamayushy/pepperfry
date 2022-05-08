@@ -51,7 +51,7 @@ const CheckOut = () => {
 
     const addD = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3004/user',{
+        fetch('https://aqueous-atoll-89890.herokuapp.com/user',{
             method:'POST',
             body:JSON.stringify(add),
             headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -130,10 +130,10 @@ const CheckOut = () => {
 
         <div className={ck.or}>
         {allCart.map(usr => (<div className={ck.os} key={usr.id}>
-                            <h4>{usr.name}</h4>
-                            <h4>{usr.Price}</h4>
-                            <h4>{usr.title}</h4>
-                            <h4>{usr.count}</h4>
+                            <h4>Product Name: {usr.name}</h4>
+                            <h4>Price: {usr.Price}</h4>
+                            <h4>Brand: {usr.title}</h4>
+                            <h4>Qty: {usr.count}</h4>
                             <img src={usr.image} alt="" />
                            
                         </div>))}

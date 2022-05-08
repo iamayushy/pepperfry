@@ -6,7 +6,7 @@ const Product = () => {
         <div>
             <Detail/>
             <Complete/>
-            <h1>The Footer Section</h1>
+            
         </div>
     )
 }

@@ -20,18 +20,23 @@ const Detail = () => {
     const [loading, setLoading] = useState(true)
     const [wish, setWish] = useState(false)
     const [cout, setCout] = useState(1)
-    const [text, settext] = useState('ADD TO CART')
+    const[isCart, setCart] = useState(false)
     useEffect(() => {
 
         dispatch(getOneProducts(params.id, params.c))
         dispatch(getCart())
 
-        fetch(`http://localhost:3004/${params.id}/${params.c}`)
+        
+        
+
+        fetch(`https://aqueous-atoll-89890.herokuapp.com/${params.id}/${params.c}`)
             .then((res) => res.json())
             .then((ans) => {
                 setImages(ans.image)
             })
         setLoading(false)
+
+
 
     }, [])
 
@@ -44,18 +49,22 @@ const Detail = () => {
        
         cartD.forEach(element => {
             if(element.id === detail.id){
+                
+                console.log(element.id, element.count)
                 UpdateCart(element.id, element)
-                settext('Go To Cart')
                 return
+                
+                
+                
             }
         });
 
-        
-        ADDTOCART('cart')
+        // setCart(false)
+        ADDTOCART()
 
     }
     const UpdateCart = (indo, data) => {
-        fetch(`http://localhost:3004/cart/${indo}`, {
+        fetch(`https://aqueous-atoll-89890.herokuapp.com/cart/${indo}`, {
             method: "PUT",
             body: JSON.stringify({
                 ...data,
@@ -64,26 +73,32 @@ const Detail = () => {
             headers: { "Content-type": "application/json; charset=UTF-8" },
         })
             .then((response) => response.json())
-            .then((json) => console.log(json))
+            .then((json) => {dispatch(getCart())
+                setCart(true)})
             .catch((err) => console.log(err));
     }
-    const ADDTOCART = (cart) => {
-        fetch(`http://localhost:3004/${cart}`, {
+    const ADDTOCART = () => {
+        fetch(`https://aqueous-atoll-89890.herokuapp.com/cart`, {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json',
             },
             body: JSON.stringify({
                 ...detail,
-                "image": images[1]
+                "image": images[1],
+                "count": cout
             })
-        })
+        }).then(res => res.json())
+        .then(ans => {dispatch(getCart())
+            setCart(true)})
+
+
             
             .catch((error) => {
-                UpdateCart(detail.id);
+                // UpdateCart(detail.id);
             })
     }
-
+   
 
 
     const [image, setImage] = useState(0)
@@ -150,7 +165,7 @@ const Detail = () => {
 
                     <div className={de.quant}>
                         <form className={de.qs}>
-                            <select onChange={handleCount}>
+                            <select defaultValue={cout} onChange={handleCount}>
                                 <option value="1" > {'Qty'} 1</option>
                                 <option value="2" > {'Qty'} 2</option>
                                 <option value="3" > {'Qty'} 3</option>
@@ -158,7 +173,7 @@ const Detail = () => {
                                 <option value="5" > {'Qty'} 5</option>
                                 <option value="6" > {'Qty'} 6</option>
                             </select>
-                            <input onClick={checkConflict} id='cart' value= {text} type="button" />
+                            <input className={de.inb} onClick={() => checkConflict()} id='cart' value= {'ADD TO CART'} type="button" />
                             <input id='some' value='BUY NOW' type="submit" />
                         </form>
                     </div>
