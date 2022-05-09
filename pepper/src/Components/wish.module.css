@@ -1,0 +1,34 @@
+.container{
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0.5rem;
+    margin: 0.5rem ;
+}
+.container >*{
+    flex: 1 1 20%;
+}
+
+.icont img{
+    width: 100%;
+}
+.itex h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: -4px;
+}
+.pr{
+    color: orangered;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.itex button{
+    background-color: orangered;
+    border: 1px solid orangered;
+    color: white;
+    border-radius: 4px;
+}
+.re{
+    margin-left: 1rem;
+   
+}

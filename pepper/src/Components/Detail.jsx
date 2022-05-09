@@ -5,12 +5,15 @@ import de from '../Components/detail.module.css'
 import { getOneProducts } from '../Redux/Product/action'
 import { BsHeart, BsSuitHeartFill } from 'react-icons/bs'
 import { getCart } from '../Redux/Cart/action'
+import {Loader} from '@mantine/core'
+import { fetchWish } from '../Redux/Wish/action'
 
 
 
 const Detail = () => {
     const detail = useSelector(store => store.products.details)
     const cartD =  useSelector(store => store.cart.cart)
+    const allwish = useSelector(store => store.wish.wish)
     const dispatch = useDispatch()
     const params = useParams()
     const np = '';
@@ -20,12 +23,15 @@ const Detail = () => {
     const [loading, setLoading] = useState(true)
     const [wish, setWish] = useState(false)
     const [cout, setCout] = useState(1)
+    const [load, setLoad] = useState(false)
     const[isCart, setCart] = useState(false)
     useEffect(() => {
 
         dispatch(getOneProducts(params.id, params.c))
         dispatch(getCart())
-
+        dispatch(fetchWish())
+        
+        
         
         
 
@@ -40,17 +46,21 @@ const Detail = () => {
 
     }, [])
 
-    console.log(detail)
+    // console.log(detail)
     const handleCount = (e) => {
         setCout(e.target.value)
     }
+    
+    
+    console.log(allwish);
+    
 
     const checkConflict = () => {
+        setLoad(true)
        
         cartD.forEach(element => {
             if(element.id === detail.id){
                 
-                console.log(element.id, element.count)
                 UpdateCart(element.id, element)
                 return
                 
@@ -74,8 +84,36 @@ const Detail = () => {
         })
             .then((response) => response.json())
             .then((json) => {dispatch(getCart())
-                setCart(true)})
+                setCart(true)
+            setLoad(false)})
             .catch((err) => console.log(err));
+    }
+    const deletewish = (info) => {
+        fetch(`https://aqueous-atoll-89890.herokuapp.com/wish/${info}`, {
+            method:'DELETE'
+        })
+        .then(res => res.json())
+        .then(ans => dispatch(fetchWish()))
+        
+    }
+
+    const ADDTOWISH = () => {
+        // fetch(`https://aqueous-atoll-89890.herokuapp.com/wish`, {
+        //     method:'POST',
+        //     body:JSON.stringify({
+        //         "id": detail.id,
+        //         "title": detail.title,
+        //         "name":detail.name,
+        //         "Price": detail.Price,
+        //         "mywish": true,
+        //         "image": images[1],
+        //         "count":1
+        //     })
+        // })
+        // .then(res => res.json())
+        // .then(ans => dispatch(fetchWish()))
+        console.log(detail)
+        
     }
     const ADDTOCART = () => {
         fetch(`https://aqueous-atoll-89890.herokuapp.com/cart`, {
@@ -90,7 +128,8 @@ const Detail = () => {
             })
         }).then(res => res.json())
         .then(ans => {dispatch(getCart())
-            setCart(true)})
+            setCart(true)
+        setLoad(false)})
 
 
             
@@ -138,14 +177,22 @@ const Detail = () => {
 
                         </div>
                     </div>
-
+               
                 </div>
                 <div>
                     <div className={de.pname}>
                         <h3>{detail.title}</h3>
                         <p>{detail.name}</p>
-                        {wish === false ? <BsHeart onClick={() => setWish(!wish)} style={{ float: 'right', marginTop: '-5rem' }} size='2rem' /> : <BsSuitHeartFill onClick={() => setWish(!wish)} style={{ float: 'right', marginTop: '-5rem' }} color="red" size='2rem' />}
+                        
+                        
                     </div>
+                        {allwish.map(ele => {
+                           if(ele.id === detail.id){
+                               return <BsSuitHeartFill onClick={ () => deletewish(ele.id)} color='red' size='1.8rem' style={{float:'right', marginTop:'-5rem'}}/>
+                           }
+                           return <BsHeart onClick={ADDTOWISH} size='1.8rem' style={{float:'right', marginTop:'-5rem'}}/>
+                        })}
+
                     <div className={de.rprice}>
                         <span>
 
@@ -162,7 +209,7 @@ const Detail = () => {
                         </section>
                         <p>Delivery - Free For Today</p>
                     </div>
-
+                    
                     <div className={de.quant}>
                         <form className={de.qs}>
                             <select defaultValue={cout} onChange={handleCount}>
@@ -177,6 +224,15 @@ const Detail = () => {
                             <input id='some' value='BUY NOW' type="submit" />
                         </form>
                     </div>
+                    <div className={de.load}>
+            {load === false ? '': 
+            
+            
+            <Loader variant='bars' color='gray'/>
+            
+            }
+           
+            </div>
                     <div className={de.ts}>
                         <h4>detials</h4>
                         <div className={de.fea}>

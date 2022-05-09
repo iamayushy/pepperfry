@@ -5,10 +5,13 @@ import { Pbox } from './Pbox'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCart } from '../Redux/Cart/action'
 import { useNavigate } from 'react-router-dom'
+import { Wish } from './Wish'
+import { fetchWish } from '../Redux/Wish/action'
 
 const Cart = () => {
     const navs = useNavigate()
     const allcart = useSelector(store => store.cart.cart)
+    const allwish = useSelector(store => store.wish.wish)
    const[progress, setProgress] = useState(false)
     const dispatch = useDispatch()
     const [carts, setcartDetails] = useState([])
@@ -18,6 +21,7 @@ const Cart = () => {
         {name:'MY WISHLIST', index: 1},
         {name:'RECENT', index:2}
     ]
+    console.log(ac);
 
     useEffect(() => {
         // fetch('http://localhost:3004/cart')
@@ -25,6 +29,7 @@ const Cart = () => {
         // .then(ans => setcartDetails(ans))
 
         dispatch(getCart())
+        dispatch(fetchWish())
         
     }, [])
 
@@ -60,6 +65,7 @@ const Cart = () => {
     }
 
     const UpdateCartD = (indo, data) => {
+        setProgress(true)
         if(data.count === 1){
             handleDelete(indo)
         }
@@ -73,7 +79,8 @@ const Cart = () => {
             headers: { "Content-type": "application/json; charset=UTF-8" },
         })
             .then((response) => response.json())
-            .then((json) => dispatch(getCart()))
+            .then((json) => {dispatch(getCart())
+                setProgress(false)})
             .catch((err) => console.log(err));
     
     }
@@ -81,7 +88,7 @@ const Cart = () => {
     
     
     console.log(carts);
-
+   
     
 
     return(
@@ -105,7 +112,7 @@ const Cart = () => {
             {progress === false ? '': 
             
             <Group position='center'>
-            <Loader color='orange' variant='bar' size='lg'/>
+            <Loader color='gray'/>
             </Group>
             }
            
@@ -130,13 +137,14 @@ const Cart = () => {
             </div>
             
             <div className={cart.float}>
-            {ac === 1 && carts.map( usr => (<Pbox key={usr.id}
-            name={usr.name}
-            price={usr.Price}
-            desc={usr.title}
-            number={usr.count}
-            image={usr.image}
-            />))}
+            {ac === 1 && allwish.map(wd => (
+                <Wish
+                wim={wd.image}
+                wname={wd.name}
+                wtext={wd.title}
+                wprice={wd.Price}/>
+            ))
+            }
             </div>
 
             
