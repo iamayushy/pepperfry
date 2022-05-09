@@ -1,7 +1,8 @@
 import pb from '../Components/pbox.module.css'
 import rev from '../assets/rev.png'
 import { useParams } from 'react-router-dom'
-const Pbox = ({handle,name, desc, price, number, out, image, increase, reduce}) => {
+import { Group } from '@mantine/core'
+const Pbox = ({handle,name, desc, price, number, out, image, increase, reduce, loader}) => {
 
     
 
@@ -26,7 +27,12 @@ const Pbox = ({handle,name, desc, price, number, out, image, increase, reduce}) 
                             <div onClick={out} className={pb.rem}>
                                 <p onClick={handle} className={pb.rems}>Remove</p>
                             </div>
+                            
                         </div>
+                        <Group position='center'>
+                            {loader}
+                        </Group>
+                        
                     </div>
                     
             </div>

@@ -3,7 +3,9 @@ const FETCH_WISH = 'FETCH_WISH'
 
 const fetchCartData = (data) =>({
     type: FETCH_CART,
-    payload: data
+    payload: data,
+
+    
 })
 
 const fetchWish = (wdata) =>({
@@ -14,7 +16,8 @@ const fetchWish = (wdata) =>({
 
 const getCart = () => {
     return(dispatch) => {
-        fetch(` http://localhost:3004/cart`)
+        
+        fetch(`https://aqueous-atoll-89890.herokuapp.com/cart`)
         .then(res => res.json())
         .then(data => dispatch(fetchCartData(data)))
     }
@@ -22,7 +25,7 @@ const getCart = () => {
 
 const getWish = () => {
     return(dispatch) => {
-        fetch(` http://localhost:3004/wish`)
+        fetch(`https://aqueous-atoll-89890.herokuapp.com/wish`)
         .then(res => res.json())
         .then(data => dispatch(fetchWish(data)))
     }

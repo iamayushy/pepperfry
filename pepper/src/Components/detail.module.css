@@ -12,6 +12,15 @@
 .main > *{
     flex:  1 1 50%;
 }
+.inb{
+    transition: transform 0.2s ease-in-out;
+}
+.inb:hover{
+    background-color: black;
+    color: white;
+    /* box-shadow: 8px 8px 8px rgb(183, 183, 183); */
+    transform: scale(105%);
+}
 .big{
     display: flex;
     justify-content: center;
@@ -143,3 +152,4 @@ select{
     }
     
 }
+

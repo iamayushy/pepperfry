@@ -32,6 +32,16 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+
+.load{
+    position: absolute;
+    left: 0;
+    right: 0;
+    align-items: center;
+    top: 45%;
+    display: flex;
+    justify-content: center;
+}
 .clinks li:hover{
     background-color: white;
     color: black
