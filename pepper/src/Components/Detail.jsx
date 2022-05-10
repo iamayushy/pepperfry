@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import de from '../Components/detail.module.css'
 import { getOneProducts } from '../Redux/Product/action'
-import { BsHeart, BsSuitHeartFill } from 'react-icons/bs'
+import { BsHeart, BsHeartFill } from 'react-icons/bs'
 import { getCart } from '../Redux/Cart/action'
 import {Loader} from '@mantine/core'
 import { fetchWish } from '../Redux/Wish/action'
@@ -17,6 +17,7 @@ const Detail = () => {
     const dispatch = useDispatch()
     const params = useParams()
     const np = '';
+    const [isInCart, setInCart] = useState(false)
     // const [final, setFinal] = useState({});
     const [simage, setimage] = useState([])
     const [images, setImages] = useState([])
@@ -52,7 +53,6 @@ const Detail = () => {
     }
     
     
-    console.log(allwish);
     
 
     const checkConflict = () => {
@@ -89,33 +89,36 @@ const Detail = () => {
             .catch((err) => console.log(err));
     }
     const deletewish = (info) => {
+        setLoad(true)
         fetch(`https://aqueous-atoll-89890.herokuapp.com/wish/${info}`, {
             method:'DELETE'
         })
         .then(res => res.json())
-        .then(ans => dispatch(fetchWish()))
+        .then(ans => {dispatch(fetchWish())
+        setLoad(false)})
         
     }
 
     const ADDTOWISH = () => {
-        // fetch(`https://aqueous-atoll-89890.herokuapp.com/wish`, {
-        //     method:'POST',
-        //     body:JSON.stringify({
-        //         "id": detail.id,
-        //         "title": detail.title,
-        //         "name":detail.name,
-        //         "Price": detail.Price,
-        //         "mywish": true,
-        //         "image": images[1],
-        //         "count":1
-        //     })
-        // })
-        // .then(res => res.json())
-        // .then(ans => dispatch(fetchWish()))
+       
+        
+        setLoad(true)
+        fetch(`https://aqueous-atoll-89890.herokuapp.com/wish`, {
+            method:'POST',
+            body:JSON.stringify({
+                ...detail,
+                "image":images[1]
+            }),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+        .then(res => res.json())
+        .then(ans => {dispatch(fetchWish())
+        setLoad(false)})
         console.log(detail)
         
     }
     const ADDTOCART = () => {
+        setInCart(true)
         fetch(`https://aqueous-atoll-89890.herokuapp.com/cart`, {
             method: 'POST',
             headers: {
@@ -188,10 +191,16 @@ const Detail = () => {
                     </div>
                         {allwish.map(ele => {
                            if(ele.id === detail.id){
-                               return <BsSuitHeartFill onClick={ () => deletewish(ele.id)} color='red' size='1.8rem' style={{float:'right', marginTop:'-5rem'}}/>
+                               return <BsHeartFill  key={ele.id} onClick={ () => deletewish(ele.id)} color='red' size='1.8rem' style={{float:'right', marginTop:'-5rem'}}/>
                            }
-                           return <BsHeart onClick={ADDTOWISH} size='1.8rem' style={{float:'right', marginTop:'-5rem'}}/>
+                           else{
+                            <BsHeart key={ele.id} onClick={ADDTOWISH} size='1.8rem' color='red' style={{float:'right', marginTop:'-5rem'}}/>
+                           }
+                          
                         })}
+                        {allwish.length <= 0 && <BsHeart onClick={ADDTOWISH} size='1.8rem' color='red' style={{float:'right', marginTop:'-5rem'}}/> }
+
+                       
 
                     <div className={de.rprice}>
                         <span>

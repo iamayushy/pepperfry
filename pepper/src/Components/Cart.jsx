@@ -12,7 +12,8 @@ const Cart = () => {
     const navs = useNavigate()
     const allcart = useSelector(store => store.cart.cart)
     const allwish = useSelector(store => store.wish.wish)
-   const[progress, setProgress] = useState(false)
+
+    const[progress, setProgress] = useState(false)
     const dispatch = useDispatch()
     const [carts, setcartDetails] = useState([])
     const [ac, setAC] = useState(0)
@@ -42,7 +43,7 @@ const Cart = () => {
             method: "PUT",
             body: JSON.stringify({
                 ...data,
-                "count": data.count + 1
+                "count": +data.count + 1
             }),
             headers: { "Content-type": "application/json; charset=UTF-8" },
         })
@@ -85,6 +86,39 @@ const Cart = () => {
     
     }
 
+    const WishDelete = (did) => {
+        setProgress(true)
+        fetch(`https://aqueous-atoll-89890.herokuapp.com/wish/${did}`, {
+            method: "DELETE",
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          })
+            .then((response) => response.json())
+            .then((json) => {dispatch(getCart())
+                dispatch(fetchWish())
+                setProgress(false)})
+            .catch((err) => console.log(err));
+
+    }
+    const moveToCart = (mtoc, mid) => {
+        setProgress(true)
+        fetch('https://aqueous-atoll-89890.herokuapp.com/cart',{
+            method:'POST',
+            body:JSON.stringify({
+                ...mtoc
+            }),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+        .then(res => res.json())
+        .then(ans => {
+            WishDelete(mid)
+            dispatch(getCart())
+            dispatch(fetchWish())
+            setProgress(false)
+        })
+        .catch(err => console.log(err))
+    }
+
+    
     
     
     console.log(carts);
@@ -134,16 +168,27 @@ const Cart = () => {
             handle={() => handleDelete(usr.id)}
             
             />))}
+            {/* <Group position='center'> */}
+            { ac === 0 &&
+            <button onClick={() => allcart.length > 0? navs('/checkout'):navs('/')} className={cart.confirm}>{allcart.length > 0 ? 'PROCEED TO PAY': 'ADD ITEMS TO CART'}</button>
+}
+            {/* </Group> */}
             </div>
             
             <div className={cart.float}>
             {ac === 1 && allwish.map(wd => (
                 <Wish
+                key={wd.id}
                 wim={wd.image}
                 wname={wd.name}
                 wtext={wd.title}
-                wprice={wd.Price}/>
+                wprice={wd.Price}
+                mvc={() => moveToCart(wd, wd.id)}
+                del={() => WishDelete(wd.id)}/>
             ))
+            }
+            { ac === 1 &&
+            <button className={cart.confirm}>{allwish.length > 0 ? 'ADD MORE TO WISH': 'YOU WISH IS EMPTY'}</button>
             }
             </div>
 
@@ -151,9 +196,9 @@ const Cart = () => {
             
             
             {/* </div> */}
-            <Group position='center'>
-            <button onClick={() => allcart.length > 0? navs('/checkout'):navs('/')} className={cart.confirm}>{allcart.length > 0 ? 'Confirm Your Order': 'Cart Is Empty'}</button>
-            </Group>
+            {/* <Group position='center'>
+            <button onClick={() => allcart.length > 0? navs('/checkout'):navs('/')} className={cart.confirm}>{}</button>
+            </Group> */}
         </div>
     </>
     )
