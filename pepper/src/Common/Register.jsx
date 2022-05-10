@@ -1,10 +1,17 @@
 import {FcGoogle} from 'react-icons/fc'
 import reg from '../Common/reg.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { auth, provider } from '../../firebase'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCurrent, getGAuth } from '../Redux/Rauth/action'
 
 const Register = ({mover}) => {
 
+
     
+    const user = useSelector(store => store.gauth.userDetail)
+    const dispatch = useDispatch()
     const [userDetail, setUserDetail] = useState({
         name:'',
         email:'',
@@ -21,6 +28,8 @@ const Register = ({mover}) => {
         console.log(userDetail)
     }
 
+   
+
     const getIn = (e) => {
         e.preventDefault()
         fetch('https://reqres.in/api/logi',{
@@ -30,6 +39,13 @@ const Register = ({mover}) => {
         .then((res) => console.log(res))
     
     }
+
+    const handleGoogle = () =>{
+      dispatch(getGAuth())
+      
+    }
+    console.log(user)
+
     
 
 
@@ -54,7 +70,7 @@ const Register = ({mover}) => {
                     <button onClick={mover}>Existing User ? Login</button>
                     <div style={{display:'flex',alignItems:'center', gap:'1.5rem', marginTop:'1rem'}}>
                         
-                        <span>or continue with </span><FcGoogle size='2rem'/>
+                        <span>or continue with </span><FcGoogle onClick={handleGoogle} size='2rem'/>
                     </div>
                 </div>
             </div>
