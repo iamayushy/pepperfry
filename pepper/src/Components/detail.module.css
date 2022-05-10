@@ -12,6 +12,13 @@
 .main > *{
     flex:  1 1 50%;
 }
+.load{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60%;
+    text-align: center;
+}
 .inb{
     transition: transform 0.2s ease-in-out;
 }

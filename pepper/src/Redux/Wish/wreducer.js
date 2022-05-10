@@ -1,19 +1,17 @@
-import { FETCH_WISH } from "./action"
+import { GET_WISH } from "./action"
 
-const init ={
-    love: false,
-    lovedata: []
+const init = {
+    wish: []
 }
+
 
 const wreducer = (store = init, action) => {
     switch(action.type){
-        case FETCH_WISH:{
+        case GET_WISH:
             return{
                 ...store,
-                lovedata:action.payload,
-                meta: true
+                wish: action.payload
             }
-        }
         default:
             return store
     }
