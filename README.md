@@ -21,14 +21,14 @@ JSON-SERVER => For API WORK
 2. It has four section for navigating.
 3. Only 2 items can be searched. As the data set is limited.
 
-![Product List Page](![home](https://github.com/iamayushy/pepperfry/blob/main/search.png))
+![Product List Page](![home](https://github.com/iamayushy/pepperfry/blob/main/search.png)
 
 ## It list all the data from the JSON server.
 1. One Filter the data from low to high and high to low
 2. The sorting can also be done based on brands.
 3. After Clicking on the particualar project an indiviudal page is opened for the product.
 
-![View](![home](https://github.com/iamayushy/pepperfry/blob/main/single.png))
+![View](![home](https://github.com/iamayushy/pepperfry/blob/main/single.png)
 ## This is the product page
 
 1. It has a complete product description of the particular product.
