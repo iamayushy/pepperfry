@@ -39,7 +39,7 @@ const Navbar = () => {
                     <Link className={nav.logo} to="/">.</Link>
                 </section>
                 <section className={nav.search}>
-                    <input onKeyDown={handleChange} onChange={(e) => setSearch(e.target.value)}  placeholder='Your door to happiness opens with a search' type="text" name="" id="" />
+                    <input onKeyDown={handleChange} onChange={(e) => setSearch(e.target.value)}  placeholder='Only search sofa or table as data is limited' type="text" name="" id="" />
                     <input type="submit" name="" id="" />
                 </section>
                 <section className={nav.user}>
@@ -73,17 +73,17 @@ const Navbar = () => {
 
             <section className={nav.links}>
                 <ul>
-                    <li onClick={() => setDen(!den)}><a href="#">Sofas & Recliners</a> </li>
-                    <li onClick={() => setDen(!den)}> <a href="#">Storage</a> </li>
-                    <li onClick={() => setDen(!den)}> <a href="#">Furniture</a> </li>
-                    <li onClick={() => setDen(!den)}> <a href="#">Beds & Mattresses</a> </li>
-                    <li onClick={() => setDen(!den)}> <a href="#">Dining & Bar</a> </li>
-                    <li onClick={() => setDen(!den)}> <a href="#">Wall Accents</a> </li>
-                    <li onClick={() => setDen(!den)}> <a href="#">Decor</a> </li>
-                    <li onClick={() => setDen(!den)}> <a href="#">Lighting</a> </li>
-                    <li onClick={() => setDen(!den)}> <a href="#">Home Linen</a> </li>
-                    <li onClick={() => setDen(!den)}> <a href="#">Carpets</a> </li>
-                    <li onClick={() => setDen(!den)}><a href="$">Garden & Outdoor</a></li>
+                    <li><a href="#">Sofas & Recliners</a> </li>
+                    <li> <a href="#">Storage</a> </li>
+                    <li> <a href="#">Furniture</a> </li>
+                    <li> <a href="#">Beds & Mattresses</a> </li>
+                    <li> <a href="#">Dining & Bar</a> </li>
+                    <li> <a href="#">Wall Accents</a> </li>
+                    <li> <a href="#">Decor</a> </li>
+                    <li> <a href="#">Lighting</a> </li>
+                    <li> <a href="#">Home Linen</a> </li>
+                    <li> <a href="#">Carpets</a> </li>
+                    <li><a href="$">Garden & Outdoor</a></li>
                     <li><a href="$">Appliances</a></li>
                     <li><a href="$">Modular</a></li>
 

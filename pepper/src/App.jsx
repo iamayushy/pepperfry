@@ -22,18 +22,13 @@ function App() {
   useEffect(() => {
   dispatch(getCurrent())}, [])
 
-  console.log(userFeed);
-  const handleLog = () => {
-    dispatch(signMeOut())
-    console.log(userFeed)
-  }
   
   return (
     <div className="App">
-      <button onClick={handleLog} >Logout</button>
+      {/* <button onClick={handleLog} >Logout</button> */}
       <Navbar/>
       <Routes>
-        <Route path="*" element={<Home/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/:id" element={<Array/>}/>
         <Route path="/:id/:c" element={<Product/>}/>
         <Route path="/checkout" element={<CheckOut/>}/>

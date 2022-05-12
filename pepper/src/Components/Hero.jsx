@@ -46,11 +46,11 @@ const Hero = () => {
                         <p>Work From Home</p>
                     </section>
                     <section className={hero.nav}>
-                       <Link to={`/bed`}> <img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_3__2x_22042022.jpg'} alt="" /></Link>
+                       <Link to={`/sofa`}> <img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_3__2x_22042022.jpg'} alt="" /></Link>
                         <p>Bedroom</p>
                     </section>
                     <section className={hero.nav}>
-                       <Link to={'/kids'}> <img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_4__2x_22042022.jpg'} alt="" /></Link>
+                       <Link to={'/table'}> <img src={'https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_4__2x_22042022.jpg'} alt="" /></Link>
                         <p>Kids Room</p>
                     </section>
                     
