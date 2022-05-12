@@ -8,7 +8,6 @@ import { getProducts } from "../Redux/Product/action";
 
 const Array = () => {
     const task = useSelector((store) => store.products.products)
-    console.log(task)
     const dispatch = useDispatch()
     const params = useParams()
     const [da, setDa] = useState([])
@@ -18,9 +17,7 @@ const Array = () => {
     },[params.id])
     const [rad, setRad] = useState('normal')
     rad === 'lh'? task.sort((a, b) => a.Price - b.Price):task.sort((a, b) => b.Price - a.Price)
-    const handl= () => {
-       console.log(rad);
-    }
+   
     
     
     let ans = []

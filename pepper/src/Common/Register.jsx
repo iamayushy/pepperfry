@@ -44,7 +44,6 @@ const Register = ({mover}) => {
       dispatch(getGAuth())
       
     }
-    console.log(user)
 
     
 

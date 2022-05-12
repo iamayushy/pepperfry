@@ -22,7 +22,6 @@ const Cart = () => {
         {name:'MY WISHLIST', index: 1},
         {name:'RECENT', index:2}
     ]
-    console.log(ac);
 
     useEffect(() => {
         // fetch('http://localhost:3004/cart')
@@ -121,7 +120,7 @@ const Cart = () => {
     
     
     
-    console.log(carts);
+    
    
     
 
