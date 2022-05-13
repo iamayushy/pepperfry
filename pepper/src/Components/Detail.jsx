@@ -16,9 +16,7 @@ const Detail = () => {
     const allwish = useSelector(store => store.wish.wish)
     const dispatch = useDispatch()
     const params = useParams()
-    const np = '';
     const [isInCart, setInCart] = useState(false)
-    // const [final, setFinal] = useState({});
     const [simage, setimage] = useState([])
     const [images, setImages] = useState([])
     const [loading, setLoading] = useState(true)
@@ -114,7 +112,6 @@ const Detail = () => {
         .then(res => res.json())
         .then(ans => {dispatch(fetchWish())
         setLoad(false)})
-        console.log(detail)
         
     }
     const ADDTOCART = () => {

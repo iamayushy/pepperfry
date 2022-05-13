@@ -6,11 +6,13 @@ import { auth, provider } from '../../firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCurrent, getGAuth } from '../Redux/Rauth/action'
 
-const Register = ({mover}) => {
+const Register = ({mover, close, handle}) => {
 
 
     
     const user = useSelector(store => store.gauth.userDetail)
+    const auth = useSelector(store => store.gauth.userid)
+
     const dispatch = useDispatch()
     const [userDetail, setUserDetail] = useState({
         name:'',
@@ -25,7 +27,7 @@ const Register = ({mover}) => {
             ...userDetail,
             [name]:value
         })
-        console.log(userDetail)
+        
     }
 
    
@@ -40,10 +42,6 @@ const Register = ({mover}) => {
     
     }
 
-    const handleGoogle = () =>{
-      dispatch(getGAuth())
-      
-    }
 
     
 
@@ -57,10 +55,10 @@ const Register = ({mover}) => {
 
             <div className={reg.fm}>
                 <form className={reg.form} onSubmit={getIn}>
-                    <input onChange={getChange} value={userDetail.name} required type="text" placeholder="Name" name='name'/>
-                    <input onChange={getChange} value={userDetail.email} required type="email" placeholder="Email" name='email'/>
-                    <input onChange={getChange} value={userDetail.password} placeholder='Password' type="password" name='password'/>
-                    <input  type="submit" value="Register"/>
+                    <input onChange={getChange} disabled value={userDetail.name} required type="text" placeholder="Use GOOGLE SIGN IN  😅" name='name'/>
+                    <input onChange={getChange} disabled value={userDetail.email} required type="email" placeholder="Email" name='email'/>
+                    <input onChange={getChange} disabled value={userDetail.password} placeholder='Password' type="password" name='password'/>
+                    <input onClick={close}  type="submit" value="Register"/>
                     <p>By registering you agree to our <span style={{textDecorationLine:'underline'}}>Terms & Conditions</span></p>
 
                 </form>
@@ -69,7 +67,7 @@ const Register = ({mover}) => {
                     <button onClick={mover}>Existing User ? Login</button>
                     <div style={{display:'flex',alignItems:'center', gap:'1.5rem', marginTop:'1rem'}}>
                         
-                        <span>or continue with </span><FcGoogle onClick={handleGoogle} size='2rem'/>
+                        <span>or continue with </span><FcGoogle onClick={handle} size='2rem'/>
                     </div>
                 </div>
             </div>

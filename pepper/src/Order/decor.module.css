@@ -1,0 +1,29 @@
+.cc{
+    width: 300px;
+    border: 2px solid orangered;
+    padding: 0.8rem;
+    border-radius: 5px;
+    box-shadow: 8px 8px 8px rgb(197, 197, 197);
+}
+.im img{
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+.look{
+    margin-top: 1rem;
+}
+.look h1{
+    color: orangered;
+    text-transform: uppercase;
+    margin-left: 4rem;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.box{
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+}

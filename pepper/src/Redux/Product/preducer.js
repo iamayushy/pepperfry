@@ -1,8 +1,9 @@
-import { FETCH_ONE, FETCH_PRODUCTS } from "./action"
+import { FETCH_ONE, FETCH_ORDERS, FETCH_PRODUCTS } from "./action"
 
 const init = {
     products: [],
-    details: {}
+    details: {},
+    order: []
 }
 const pReducer = (store = init, action) => {
     switch(action.type){
@@ -15,6 +16,12 @@ const pReducer = (store = init, action) => {
             return{
                 ...store,
                 details:action.payload
+            }
+        }
+        case FETCH_ORDERS:{
+            return{
+                ...store,
+                order: action.payload
             }
         }
 

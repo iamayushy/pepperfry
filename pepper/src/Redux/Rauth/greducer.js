@@ -1,8 +1,10 @@
-import { GOOGLE_AUTH, IS_AUTH, LOGOUT } from "./action"
+import { GOOGLE_AUTH, IS_AUTH, LOGOUT, USER_IN } from "./action"
 
 const init = {
     userDetail : {},
-    userid: {}
+    userid: {},
+    profile: {}
+    
 }
 
 const greducer = (store = init, action) => {
@@ -10,14 +12,16 @@ const greducer = (store = init, action) => {
         case GOOGLE_AUTH:
             return{
                 ...store,
-                userDetail: action.payload
+                userDetail: {...action.payload}
+                
             }
         case IS_AUTH:{
             return{
                 ...store,
                 userid: {
                     login: true,
-                    token: action.payload
+                    detail: action.payload,
+                    
                 }
             }
         }
@@ -28,6 +32,12 @@ const greducer = (store = init, action) => {
                     login: action.payload,
                     token: null
                 }
+            }
+        }
+        case USER_IN:{
+            return{
+                ...store,
+                profile: action.payload
             }
         }
         default:
