@@ -6,10 +6,7 @@ import com from '../Components/com.module.css'
 
 const Complete = () => {
     const arr = getData()
-    console.log(arr);
-    // console.log(data)
     const [show, setShow] = useState('')
-    console.log(show)
     return(
         <div className={com.size}>
             <div className={com.header}>
