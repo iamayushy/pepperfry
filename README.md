@@ -38,7 +38,6 @@ JSON-SERVER => For API WORK
 do try once.
 
 ## Future Work
-1. Authentication is in progress.
-2. Payment Page Integration is pending.
+1. Payment Page Integration is pending.
 
 ## That's it do provide your feedback about this site.
