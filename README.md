@@ -3,7 +3,6 @@
 ## [PEPPERFRY](https://pepper-gilt.vercel.app/)
 <ul>
 <li>An e-commerce website for furniture</li>
-<li>Compete Website Was developed in 5 days.</li>
 </ul>
 
 ## Tech Stack
