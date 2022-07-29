@@ -7,7 +7,7 @@ import { getCart } from '../Redux/Cart/action'
 import { useNavigate } from 'react-router-dom'
 import { Wish } from './Wish'
 import { fetchWish } from '../Redux/Wish/action'
-
+// changes made with devnest
 const Cart = () => {
     const navs = useNavigate()
     const allcart = useSelector(store => store.cart.cart)
